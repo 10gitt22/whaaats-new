@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
-import { builadResolvers } from './buildResolvers';
+import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 import { BuildOptions } from './types/config';
 
@@ -22,7 +22,7 @@ export function buildWebpackConfig(
     module: {
       rules: buildLoaders(options),
     },
-    resolve: builadResolvers(),
+    resolve: buildResolvers(options),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };

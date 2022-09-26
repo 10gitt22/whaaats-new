@@ -5,11 +5,11 @@ export const enum Theme {
   DARK = 'dark',
 }
 
-export type ThemeContext = {
+type ThemeContextType = {
   theme?: Theme;
   setTheme?: (theme: Theme) => void;
 };
 
-export const ThemeContext = createContext<ThemeContext>({});
+export const ThemeContext = createContext<ThemeContextType>({});
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
