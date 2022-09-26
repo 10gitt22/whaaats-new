@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "esModuleInterop": true, // default webpack uses common js (module.require = ...) If set this true we can use (import Something from 'something')
+        "allowSyntheticDefaultImports": true  // default import requires import like [import * as Something from 'something'] If set this true we can import like a usual module without [* as] (import Something from 'something')
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
