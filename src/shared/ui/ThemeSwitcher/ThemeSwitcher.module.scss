@@ -21,6 +21,10 @@
       transform: translateX(-100%);
     }
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .switch {
@@ -28,8 +32,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 24px;
-  width: 24px;
+  height: 26px;
+  width: 26px;
   border-radius: 10px;
   background: linear-gradient(
     100deg,
@@ -41,8 +45,8 @@
   border: 1px solid var(--border-color);
 
   .icon {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     fill: var(--secondary-color-inverted);
   }
 }
