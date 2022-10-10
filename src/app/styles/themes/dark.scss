@@ -2,5 +2,10 @@
   --bg-color: rgb(29, 29, 29);
 
   --primary-color: rgb(129, 209, 204);
-  --secondary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(240, 240, 240);
+  --secondary-color-inverted: rgb(29, 29, 29);
+  --border-color: var(--dark-gray);
+
+  --gradient-color-1: var(--primary-color);
+  --gradient-color-2: rgba(115, 32, 179, 1);
 }

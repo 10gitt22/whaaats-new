@@ -1,6 +1,11 @@
 .app.primary {
-  --bg-color: rgb(255, 255, 255);
+  --bg-color: rgb(240, 240, 240);
 
-  --primary-color: rgb(209, 129, 204);
+  --primary-color: #f17fea;
   --secondary-color: rgb(29, 29, 29);
+  --secondary-color-inverted: rgb(240, 240, 240);
+  --border-color: var(--light-gray);
+
+  --gradient-color-1: var(--primary-color);
+  --gradient-color-2: rgba(115, 32, 179, 1);
 }

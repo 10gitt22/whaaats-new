@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 25px;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--default-transition);
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.logo {
+  font: var(--font-l-bold);
+  font-weight: 300;
+  span {
+    font: var(--font-l);
+  }
+}
