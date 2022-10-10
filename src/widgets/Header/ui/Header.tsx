@@ -4,12 +4,15 @@ import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { useTranslation } from 'react-i18next';
 
 type HeaderProps = {
   className?: string;
 };
 
 export const Header: FC<HeaderProps> = ({ className }) => {
+  const { t } = useTranslation();
+
   return (
     <header className={classNames(styles.header, {}, [className])}>
       <div className={styles.logo}>
@@ -18,8 +21,8 @@ export const Header: FC<HeaderProps> = ({ className }) => {
 
       <div className={styles.menu}>
         <div className={styles.nav}>
-          <NavLink to={'/'}>Main</NavLink>
-          <NavLink to={'/about'}>About</NavLink>
+          <NavLink to={'/'}>{t('main')}</NavLink>
+          <NavLink to={'/about'}>{t('about')}</NavLink>
         </div>
         <ThemeSwitcher />
       </div>
