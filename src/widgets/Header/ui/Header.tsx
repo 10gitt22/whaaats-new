@@ -17,12 +17,14 @@ export const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header className={classNames(styles.header, {}, [className])}>
       <div className={styles.logo}>
-        Whaaat&apos;s <span>new</span>
+        {/* eslint-disable-next-line i18next/no-literal-string */}
+        <>Whaaat&apos;s <span>new</span></>
       </div>
 
       <div className={styles.menu}>
         <div className={styles.nav}>
           <NavLink to={'/'}>{t('main')}</NavLink>
+          {/* eslint-disable-next-line i18next/no-literal-string */}
           <NavLink to={'/about'}>{t('about')}</NavLink>
         </div>
         <ThemeSwitcher />
