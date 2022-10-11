@@ -1,43 +1,42 @@
 :root {
-  --font-family-primary: Mariupol-Regular;
-  --font-family-primary-medium: Mariupol-Medium;
-  --font-family-primary-bold: Mariupol-Bold;
-
+  --font-family-primary: mariupol-regular;
+  --font-family-primary-medium: mariupol-medium;
+  --font-family-primary-bold: mariupol-bold;
   --font-size-m: 16px;
   --font-line-m: 24px;
   --font-m: var(--font-size-m) / var(--font-size-m) var(--font-family-primary);
-  --font-m-medium: var(--font-size-m) / var(--font-size-m)
+  --font-m-medium:
+    var(--font-size-m) / var(--font-size-m)
     var(--font-family-primary-medium);
-  --font-m-bold: var(--font-size-m) / var(--font-size-m)
+  --font-m-bold:
+    var(--font-size-m) / var(--font-size-m)
     var(--font-family-primary-bold);
-
   --font-size-l: 24px;
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-size-l) var(--font-family-primary);
-  --font-l-medium: var(--font-size-l) / var(--font-size-l)
+  --font-l-medium:
+    var(--font-size-l) / var(--font-size-l)
     var(--font-family-primary-medium);
-  --font-l-bold: var(--font-size-l) / var(--font-size-l)
+  --font-l-bold:
+    var(--font-size-l) / var(--font-size-l)
     var(--font-family-primary-bold);
-
   --header-height: 60px;
-
   --light-gray: #ddd;
   --dark-gray: #333;
-
   --default-transition: 0.3s ease;
 }
 
 @font-face {
-  font-family: 'Mariupol-Regular';
-  src: url('shared/assets/fonts/Mariupol-Regular.ttf');
+  font-family: Mariupol-Regular;
+  src: url("shared/assets/fonts/Mariupol-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Mariupol-Medium';
-  src: url('shared/assets/fonts/Mariupol-Medium.ttf');
+  font-family: Mariupol-Medium;
+  src: url("shared/assets/fonts/Mariupol-Medium.ttf");
 }
 
 @font-face {
-  font-family: 'Mariupol-Bold';
-  src: url('shared/assets/fonts/Mariupol-Bold.ttf');
+  font-family: Mariupol-Bold;
+  src: url("shared/assets/fonts/Mariupol-Bold.ttf");
 }
