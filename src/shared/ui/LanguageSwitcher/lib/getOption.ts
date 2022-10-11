@@ -1,5 +1,5 @@
-import { LanguageOption } from './options';
+import { LanguageOption } from './options'
 
 export const getOption = (options: LanguageOption[], locale: string) => {
-  return options.find((option) => option.locale === locale);
-};
+  return options.find((option) => option.locale === locale)
+}
