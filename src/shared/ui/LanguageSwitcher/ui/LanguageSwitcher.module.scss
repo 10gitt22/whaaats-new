@@ -1,0 +1,39 @@
+.LanguageSwitcher {
+  position: relative;
+}
+
+.languageOptions {
+  position: absolute;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  top: 30px;
+  right: 0;
+}
+
+.dropdownIcon {
+  fill: var(--secondary-color);
+  transition: 0.2s linear;
+}
+
+.selectedOption {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: none;
+
+  .dropdownIcon {
+    rotate: 0deg;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.selectedOptionActive {
+  .dropdownIcon {
+    rotate: 180deg;
+  }
+}

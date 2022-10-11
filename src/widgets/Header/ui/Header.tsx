@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
 
 type HeaderProps = {
   className?: string;
@@ -25,6 +26,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
           <NavLink to={'/about'}>{t('about')}</NavLink>
         </div>
         <ThemeSwitcher />
+        <LanguageSwitcher />
       </div>
     </header>
   );
