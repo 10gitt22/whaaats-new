@@ -1,7 +1,7 @@
 import UkraineIcon from 'shared/assets/icons/countries/ukraine.png'
 import GBIcon from 'shared/assets/icons/countries/great-britain.png'
 
-export interface LanguageOption {
+export type LanguageOption = {
   locale: string
   label: string
   icon: string

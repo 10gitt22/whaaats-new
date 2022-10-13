@@ -17,6 +17,7 @@ module.exports = {
     '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/no-floating-promises': 'warn',
     '@typescript-eslint/naming-convention': 'warn',
+    "@typescript-eslint/consistent-type-definitions": "off",
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
     semi: 'off',

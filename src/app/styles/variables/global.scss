@@ -20,6 +20,15 @@
   --font-l-bold:
     var(--font-size-l) / var(--font-size-l)
     var(--font-family-primary-bold);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-size-xl) var(--font-family-primary);
+  --font-xl-medium:
+    var(--font-size-xl) / var(--font-size-xl)
+    var(--font-family-primary-medium);
+  --font-xl-bold:
+    var(--font-size-xl) / var(--font-size-xl)
+    var(--font-family-primary-bold);
   --header-height: 60px;
   --light-gray: #ddd;
   --dark-gray: #333;

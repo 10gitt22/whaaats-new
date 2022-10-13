@@ -7,7 +7,7 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 
-interface HeaderProps {
+type HeaderProps = {
   className?: string
 }
 

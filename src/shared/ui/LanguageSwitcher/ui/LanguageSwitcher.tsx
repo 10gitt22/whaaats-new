@@ -9,7 +9,7 @@ import { LanguageOption, languageOptions } from '../lib/options'
 import { getOption } from '../lib/getOption'
 import { LanguageOptionComponent } from './LanguageOptionComponent'
 
-interface LanguageSwitcherProps {
+type LanguageSwitcherProps = {
   className?: string
 }
 

@@ -5,7 +5,7 @@ export const enum Theme {
   DARK = 'dark',
 }
 
-interface ThemeContextType {
+type ThemeContextType = {
   theme?: Theme
   setTheme?: (theme: Theme) => void
 }

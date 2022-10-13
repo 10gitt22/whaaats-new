@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import LightIcon from 'shared/assets/icons/sun.svg'
 import DarkIcon from 'shared/assets/icons/night.svg'
 
-interface ThemeSwitcherProps {
+type ThemeSwitcherProps = {
   className?: string
 }
 
