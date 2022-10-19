@@ -35,12 +35,7 @@
   height: 26px;
   width: 26px;
   border-radius: 10px;
-  background:
-    linear-gradient(
-      100deg,
-      var(--gradient-color-1) 0%,
-      var(--gradient-color-2) 100%
-    );
+  background: var(--primary-gradient);
   box-shadow: 1px 1px 6px -4px var(--secondary-color) inset;
   transition: var(--default-transition);
   border: 1px solid var(--border-color);

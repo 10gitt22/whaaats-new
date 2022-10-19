@@ -1,4 +1,4 @@
-.app.dark {
+.app_wrapper.dark {
   --bg-color: rgb(29 29 29);
   --primary-color: rgb(129 209 204);
   --secondary-color: rgb(240 240 240);
@@ -6,4 +6,9 @@
   --border-color: var(--dark-gray);
   --gradient-color-1: var(--primary-color);
   --gradient-color-2: rgb(115 32 179 / 100%);
+  --primary-gradient: linear-gradient(
+    100deg,
+    var(--gradient-color-1) 0%,
+    var(--gradient-color-2) 100%
+  );
 }
