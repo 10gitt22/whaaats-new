@@ -10,11 +10,12 @@ import { getOption } from '../lib/getOption'
 import { LanguageOptionComponent } from './LanguageOptionComponent'
 
 type LanguageSwitcherProps = {
+  mobile?: boolean
   className?: string
 }
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
-  ({ className }) => {
+  ({ className, mobile }) => {
     const { i18n } = useTranslation()
     const [optionsOpened, setOptionsOpened] = useState(false)
     const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(
@@ -44,7 +45,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
         </div>
 
         {optionsOpened && (
-          <div className={styles.languageOptions}>
+          <div className={classNames(styles.languageOptions, {}, [mobile ? styles.mobile : undefined])}>
             {languageOptions.map((option) => {
               return (
                 <LanguageOptionComponent

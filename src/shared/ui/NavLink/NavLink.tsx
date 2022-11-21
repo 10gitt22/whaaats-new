@@ -8,9 +8,9 @@ type NavLinkProps = LinkProps & {
   className?: string
 }
 
-export const NavLink: FC<NavLinkProps> = ({ to, className, children }) => {
+export const NavLink: FC<NavLinkProps> = ({ to, className, children, ...props }) => {
   return (
-    <Link to={to} className={classNames(styles.navLink, {}, [className])}>
+    <Link to={to} {...props} className={classNames(styles.navLink, {}, [className])}>
       {children}
     </Link>
   )

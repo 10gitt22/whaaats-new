@@ -1,0 +1,45 @@
+.BurgerMenu {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  span {
+    background: var(--secondary-color);
+    border-radius: 14.29%;
+    height: 10%;
+    margin: 10% 0;
+    transition: 0.2s ease;
+  }
+
+  span:nth-of-type(1) {
+    width: 50%;
+  }
+
+  span:nth-of-type(2) {
+    width: 100%;
+  }
+
+  span:nth-of-type(3) {
+    width: 75%;
+  }
+
+  &.opened {
+    span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotateZ(45deg) translate(25%, 0);
+    }
+
+    span:nth-of-type(2) {
+      transform-origin: top;
+      transform: rotateZ(-45deg);
+    }
+
+    span:nth-of-type(3) {
+      transform-origin: top;
+      width: 50%;
+      transform: translate(100%, -120%) rotateZ(45deg);
+    }
+  }
+}

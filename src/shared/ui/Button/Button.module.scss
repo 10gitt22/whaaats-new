@@ -1,14 +1,15 @@
-.Button{
+.Button {
   border-radius: 50px;
-  padding: 15px 15px;
+  padding: 15px;
   background: var(--primary-gradient);
   font: var(--font-m-medium);
   color: var(--secondary-color-inverted);
-  transition: .2s ease;
+  transition: 0.2s ease;
   outline: none;
   border: none;
+
   &:hover {
     cursor: pointer;
-    filter: hue-rotate(60deg)
+    filter: hue-rotate(60deg);
   }
 }

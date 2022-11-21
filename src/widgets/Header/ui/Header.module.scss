@@ -5,20 +5,10 @@
   width: 100%;
   height: var(--header-height);
   padding: 0 25px;
+  position: relative;
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
   transition: var(--default-transition);
-
-  .menu {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .nav {
-    display: flex;
-    gap: 10px;
-  }
 }
 
 .logo {

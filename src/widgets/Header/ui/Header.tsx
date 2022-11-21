@@ -2,17 +2,16 @@ import styles from './Header.module.scss'
 
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { NavLink } from 'shared/ui/NavLink/NavLink'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
-import { useTranslation } from 'react-i18next'
-import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
+import useWindowDimensions from 'shared/hooks/useWindowDimentions'
+import { DesktopMenu } from './DesktopMenu'
+import { MobileMenu } from './MobileMenu'
 
 type HeaderProps = {
   className?: string
 }
 
 export const Header: FC<HeaderProps> = ({ className }) => {
-  const { t } = useTranslation()
+  const { width } = useWindowDimensions()
 
   return (
     <header className={classNames(styles.header, {}, [className])}>
@@ -21,15 +20,12 @@ export const Header: FC<HeaderProps> = ({ className }) => {
         <>Whaaat&apos;s <span>new</span></>
       </div>
 
-      <div className={styles.menu}>
-        <div className={styles.nav}>
-          <NavLink to={'/'}>{t('main')}</NavLink>
-          {/* eslint-disable-next-line i18next/no-literal-string */}
-          <NavLink to={'/about'}>{t('about')}</NavLink>
-        </div>
-        <ThemeSwitcher />
-        <LanguageSwitcher />
-      </div>
+      {
+        width > 768
+          ? <DesktopMenu />
+          : <MobileMenu />
+      }
+
     </header>
   )
 }

@@ -10,6 +10,14 @@
   border-bottom-right-radius: 10px;
   top: 30px;
   right: 0;
+
+  &.mobile {
+    top: -450%;
+    left: -26px;
+    min-width: 200px;
+    border-radius: 0;
+    border-top-right-radius: 10px;
+  }
 }
 
 .dropdownIcon {
