@@ -24,9 +24,12 @@ export function buildPlugins ({
     }),
   ].filter(Boolean)
 
+  if (analyze) {
+    plugins.push(new BundleAnalyzerPlugin())
+  }
+
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin())
-    analyze && plugins.push(new BundleAnalyzerPlugin())
   }
 
   return plugins
