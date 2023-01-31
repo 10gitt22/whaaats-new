@@ -29,19 +29,16 @@ jobs:
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
-      
       - name: upload storybook build files
-      uses: actions/upload-artifact@v3
-      with:
-        name: storybook-build
-        path: ./storybook-static
-      
+        uses: actions/upload-artifact@v3
+        with:
+          name: storybook-build
+          path: ./storybook-static
       - name: screenshot testing
         run: npm run test:ui:ci
-
       - name: upload screenshot testing files
-      uses: actions/upload-artifact@v3
-      with:
-        name: screenshots from loki
-        path: ./loki
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots from loki
+          path: ./loki
         
