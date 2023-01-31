@@ -40,5 +40,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: screenshots from loki
-          path: ./loki
+          path: ./.loki
         
