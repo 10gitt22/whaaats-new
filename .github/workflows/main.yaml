@@ -37,6 +37,7 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
       - name: upload screenshot testing files
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: screenshots from loki
