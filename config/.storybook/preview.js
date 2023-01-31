@@ -4,7 +4,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator' 
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
 import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator/I18nDecorator' 
-import i18next from '../../src/shared/config/i18n/i18n'
+import i18next from '../../src/shared/config/i18n/i18nForTests'
 
 i18next.on('languageChanged', (locale) => {
   let direction = i18next.dir(locale)

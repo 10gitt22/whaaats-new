@@ -1,7 +1,7 @@
 import { Suspense, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Story, StoryContext } from '@storybook/react'
-import i18n from 'shared/config/i18n/i18n'
+import i18n from 'shared/config/i18n/i18nForTests'
 
 export const I18nDecorator = (StoryComponent: Story, context: StoryContext) => {
   const { locale } = context.globals
