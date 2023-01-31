@@ -31,6 +31,10 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
       setOptionsOpened(false)
     }, [selectedLanguage])
 
+    useEffect(() => {
+      setSelectedLanguage(getOption(languageOptions, i18n.language))
+    }, [i18n.language])
+
     return (
       <div className={classNames(styles.LanguageSwitcher, {}, [className])}>
         <div

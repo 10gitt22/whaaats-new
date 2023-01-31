@@ -8,8 +8,8 @@ import {
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.PRIMARY
 
-const ThemeProvider: FC = (props) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+const ThemeProvider: FC<{ propsTheme?: Theme }> = (props) => {
+  const [theme, setTheme] = useState<Theme>(props.propsTheme ? props.propsTheme : defaultTheme)
 
   const defaultProps = useMemo(() => {
     return {

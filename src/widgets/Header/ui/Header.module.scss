@@ -4,8 +4,9 @@
   align-items: center;
   width: 100%;
   height: var(--header-height);
+  top: 0;
   padding: 0 25px;
-  position: relative;
+  position: absolute;
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
   transition: var(--default-transition);
