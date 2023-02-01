@@ -7,6 +7,7 @@ import { NavLink } from 'shared/ui/NavLink/NavLink'
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { RoutePath } from 'app/providers/router/config'
 
 type DesktopMenuProps = {
   className?: string
@@ -17,9 +18,8 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({ className }) => {
   return (
     <div className={classNames(styles.DesktopMenu, {}, [className])}>
       <div className={styles.nav}>
-        <NavLink to={'/'}>{t('main')}</NavLink>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <NavLink to={'/about'}>{t('about')}</NavLink>
+        <NavLink to={RoutePath.main}>{t('main')}</NavLink>
+        <NavLink to={RoutePath.about}>{t('about')}</NavLink>
       </div>
       <ThemeSwitcher />
       <LanguageSwitcher />
