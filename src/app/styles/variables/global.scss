@@ -1,4 +1,5 @@
 :root {
+  //FONT
   --font-family-primary: mariupol-regular;
   --font-family-primary-medium: mariupol-medium;
   --font-family-primary-bold: mariupol-bold;
@@ -29,10 +30,25 @@
   --font-xl-bold:
     var(--font-size-xl) / var(--font-size-xl)
     var(--font-family-primary-bold);
+
+  //RADIUSES
+  --default-radius: 25px;
+
+  //SIZES
   --header-height: 60px;
+
+  //DEFAULT COLORS
   --light-gray: #ddd;
   --dark-gray: #333;
+  --overlay-color: rgba(0, 0, 0, 0.6);
+
+  //TRANSITIONS
   --default-transition: 0.3s ease;
+  --modal-overlay-transition: 0.2s ease;
+  --modal-content-transition: 0.5s ease;
+
+  //Z-INDEXES
+  --modal-z-index: 10;
 }
 
 @font-face {
