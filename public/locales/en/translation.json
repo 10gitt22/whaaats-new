@@ -1,8 +1,9 @@
 {
-  "reloadPage": "Reload page",
-  "somethingWentWrong": "Something went wrong :(",
   "about": "About",
   "loading": "Loading...",
   "main": "Main",
-  "pageNotFound": "Page not found"
+  "pageNotFound": "Page not found",
+  "reloadPage": "Reload page",
+  "signIn": "Sign In",
+  "somethingWentWrong": "Something went wrong :("
 }

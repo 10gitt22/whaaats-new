@@ -17,7 +17,7 @@ module.exports = {
     project: './tsconfig.json',
     
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-indent': [2, 2],
     '@typescript-eslint/indent': [2, 2],
@@ -49,7 +49,9 @@ module.exports = {
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'to']
-    }]
+    }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   globals: {
     __IS_DEV__: true

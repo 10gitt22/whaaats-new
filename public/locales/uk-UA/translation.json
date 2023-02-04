@@ -1,8 +1,9 @@
 {
-  "reloadPage": "Перезавантажити сторінку",
-  "somethingWentWrong": "Щось пішло не так :(",
   "about": "Про нас",
   "loading": "Завантаження...",
   "main": "Головна",
-  "pageNotFound": "Сторінка не знайдена"
+  "pageNotFound": "Сторінка не знайдена",
+  "reloadPage": "Перезавантажити сторінку",
+  "signIn": "Увійти",
+  "somethingWentWrong": "Щось пішло не так :("
 }
