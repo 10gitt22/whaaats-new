@@ -8,12 +8,16 @@ import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { RoutePath } from 'app/providers/router/config'
+import { UserMenu } from '../UserMenu/UserMenu'
+import { Button, ButtonVariants } from 'shared/ui/Button/Button'
 
 type DesktopMenuProps = {
+  isAuth: boolean
   className?: string
+  openAuthModal: () => void
 }
 
-export const DesktopMenu: FC<DesktopMenuProps> = ({ className }) => {
+export const DesktopMenu: FC<DesktopMenuProps> = ({ isAuth, className, openAuthModal }) => {
   const { t } = useTranslation()
   return (
     <div className={classNames(styles.DesktopMenu, {}, [className])}>
@@ -23,6 +27,14 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({ className }) => {
       </div>
       <ThemeSwitcher />
       <LanguageSwitcher />
+      {isAuth
+        ? (
+          <>
+            {/* eslint-disable i18next/no-literal-string */}
+            <UserMenu userName='Yevhen Gitt' isMobile={false}/>
+          </>
+        )
+        : <Button variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>}
     </div>
   )
 }

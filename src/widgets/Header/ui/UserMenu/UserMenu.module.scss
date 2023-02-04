@@ -1,0 +1,21 @@
+.UserMenu {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-gradient);
+    font: var(--font-m-medium);
+    color: var(--light-gray);
+    border-radius: 50%;
+  }
+}
+
+.dropdownIcon {
+  fill: var(--secondary-color);
+}

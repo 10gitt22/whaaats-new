@@ -1,15 +1,31 @@
 .Button {
-  border-radius: 50px;
-  padding: 15px;
-  background: var(--primary-gradient);
-  color: var(--secondary-color-inverted);
-  font: var(--font-m-medium);
+  font: var(--font-m);
   transition: 0.2s ease;
   outline: none;
   border: none;
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+.primary {
+  border-radius: 50px;
+  padding: 10px 15px;
+  font: var(--font-m-medium);
+  background: var(--primary-gradient);
+  color: var(--secondary-color-inverted);
+
+  &:hover {
     filter: hue-rotate(60deg);
+  }
+}
+
+.clear {
+  background: none;
+  color: var(--secondary-color);
+
+  &:hover {
+    color: var(--primary-color);
   }
 }

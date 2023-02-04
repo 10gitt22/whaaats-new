@@ -9,14 +9,4 @@
   position: absolute;
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
-  transition: var(--default-transition);
-}
-
-.logo {
-  font: var(--font-l-bold);
-  font-weight: 300;
-
-  span {
-    font: var(--font-l);
-  }
 }

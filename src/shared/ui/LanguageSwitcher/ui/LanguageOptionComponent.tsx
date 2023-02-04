@@ -11,7 +11,7 @@ export const LanguageOptionComponent: FC<LanguageOptionProps> = memo(
   ({ locale, label, icon, setSelectedLanguage }) => {
     const setLanguage = useCallback(() => {
       setSelectedLanguage(getOption(languageOptions, locale))
-    }, [])
+    }, [locale, setSelectedLanguage])
 
     return (
       <div className={styles.languageOption} onClick={setLanguage}>

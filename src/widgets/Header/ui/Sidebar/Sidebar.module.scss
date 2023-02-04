@@ -1,4 +1,4 @@
-.MobileMenu {
+.Sidebar {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -29,6 +29,19 @@
     padding: 25px;
     bottom: 0;
   }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile {
+  width: 32px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 20px;
 }
 
 @keyframes start {

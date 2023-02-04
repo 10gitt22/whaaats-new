@@ -1,6 +1,6 @@
 import styles from './LanguageSwitcher.module.scss'
 
-import { FC, memo, useCallback, useEffect, useState } from 'react'
+import { FC, memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -22,14 +22,14 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
       getOption(languageOptions, i18n.language)
     )
 
-    const openSelect = useCallback((isOpen: boolean) => {
+    const openSelect = (isOpen: boolean) => {
       setOptionsOpened(!isOpen)
-    }, [])
+    }
 
     useEffect(() => {
       i18n.changeLanguage(selectedLanguage.locale)
       setOptionsOpened(false)
-    }, [selectedLanguage])
+    }, [selectedLanguage, i18n])
 
     useEffect(() => {
       setSelectedLanguage(getOption(languageOptions, i18n.language))

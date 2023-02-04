@@ -1,10 +1,13 @@
 import styles from './Header.module.scss'
 
-import { FC } from 'react'
+import { FC, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import useWindowDimensions from 'shared/hooks/useWindowDimentions'
-import { DesktopMenu } from './DesktopMenu'
-import { MobileMenu } from './MobileMenu'
+import { DesktopMenu } from './DesktopMenu/DesktopMenu'
+import { MobileMenu } from './MobileMenu/MobileMenu'
+import { Logo } from 'shared/ui/Logo/Logo'
+import { LogoSmall } from 'shared/ui/Logo/LogoSmall'
+import { Modal } from 'shared/ui/Modal/Modal'
 
 type HeaderProps = {
   className?: string
@@ -12,20 +15,30 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ className }) => {
   const { width } = useWindowDimensions()
+  const [openAuthModal, setOpenAuthModal] = useState(false)
+
+  const toggleAuthModal = useCallback(() => {
+    setOpenAuthModal(prev => !prev)
+  }, [])
 
   return (
     <header className={classNames(styles.header, {}, [className])}>
-      <div className={styles.logo}>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <>Whaaat&apos;s <span>new</span></>
-      </div>
-
       {
         width > 768
-          ? <DesktopMenu />
-          : <MobileMenu />
+          ? (
+            <>
+              <Logo />
+              <DesktopMenu isAuth={false} openAuthModal={toggleAuthModal}/>
+            </>
+          )
+          : (
+            <>
+              <LogoSmall />
+              <MobileMenu isAuth={false} openAuthModal={toggleAuthModal}/>
+            </>
+          )
       }
-
+      <Modal isOpen={openAuthModal} onClose={toggleAuthModal} />
     </header>
   )
 }
