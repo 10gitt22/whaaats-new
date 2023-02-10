@@ -7,7 +7,7 @@ import { DesktopMenu } from './DesktopMenu/DesktopMenu'
 import { MobileMenu } from './MobileMenu/MobileMenu'
 import { Logo } from 'shared/ui/Logo/Logo'
 import { LogoSmall } from 'shared/ui/Logo/LogoSmall'
-import { Modal } from 'shared/ui/Modal/Modal'
+import { LoginModal } from 'features/AuthByUsername'
 
 type HeaderProps = {
   className?: string
@@ -17,8 +17,12 @@ export const Header: FC<HeaderProps> = ({ className }) => {
   const { width } = useWindowDimensions()
   const [openAuthModal, setOpenAuthModal] = useState(false)
 
-  const toggleAuthModal = useCallback(() => {
-    setOpenAuthModal(prev => !prev)
+  const onOpenModal = useCallback(() => {
+    setOpenAuthModal(true)
+  }, [])
+
+  const onCloseModal = useCallback(() => {
+    setOpenAuthModal(false)
   }, [])
 
   return (
@@ -28,17 +32,17 @@ export const Header: FC<HeaderProps> = ({ className }) => {
           ? (
             <>
               <Logo />
-              <DesktopMenu isAuth={false} openAuthModal={toggleAuthModal}/>
+              <DesktopMenu isAuth={false} openAuthModal={onOpenModal}/>
             </>
           )
           : (
             <>
               <LogoSmall />
-              <MobileMenu isAuth={false} openAuthModal={toggleAuthModal}/>
+              <MobileMenu isAuth={false} openAuthModal={onOpenModal}/>
             </>
           )
       }
-      <Modal isOpen={openAuthModal} onClose={toggleAuthModal} />
+      <LoginModal isOpen={openAuthModal} onClose={onCloseModal} />
     </header>
   )
 }

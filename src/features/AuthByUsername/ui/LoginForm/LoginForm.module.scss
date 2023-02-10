@@ -1,0 +1,35 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.formTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.formLogo {
+  // font: var(--font-h3);
+  // span {
+  //   font-size: 48px;
+  // }
+  // position: absolute;
+  // right: 20px;
+  // top: 0;
+}
+
+.inputBlock {
+  margin: 10px 0;
+}
+
+.inputField {
+  margin: 20px 0;
+}

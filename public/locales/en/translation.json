@@ -1,9 +1,12 @@
 {
   "about": "About",
   "loading": "Loading...",
+  "logIn": "Sign In",
   "main": "Main",
   "pageNotFound": "Page not found",
+  "password": "Password",
   "reloadPage": "Reload page",
   "signIn": "Sign In",
-  "somethingWentWrong": "Something went wrong :("
+  "somethingWentWrong": "Something went wrong :(",
+  "username": "Username"
 }

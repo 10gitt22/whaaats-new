@@ -27,13 +27,13 @@ body,
 }
 
 h1 {
-  font-size: 96px;
+  font: var(--font-h1);
 }
 
 h2 {
-  font-size: 72px;
+  font: var(--font-h2);
 }
 
 h3 {
-  font-size: 48px;
+  font: var(--font-h3);
 }

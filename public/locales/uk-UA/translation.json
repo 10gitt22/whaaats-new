@@ -1,9 +1,12 @@
 {
   "about": "Про нас",
   "loading": "Завантаження...",
+  "logIn": "Логін",
   "main": "Головна",
   "pageNotFound": "Сторінка не знайдена",
+  "password": "Пароль",
   "reloadPage": "Перезавантажити сторінку",
   "signIn": "Увійти",
-  "somethingWentWrong": "Щось пішло не так :("
+  "somethingWentWrong": "Щось пішло не так :(",
+  "username": "Ім'я користувача"
 }

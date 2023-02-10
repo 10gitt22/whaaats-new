@@ -24,12 +24,17 @@
   background-color: var(--bg-color);
   border-radius: var(--default-radius);
   color: var(--secondary-color);
-  width: 75%;
-  height: 500px;
+  min-width: 300px;
+  max-width: 600px;
+  width: 70%;
   padding: 25px;
   opacity: 0;
   transition: var(--modal-content-transition);
   transform: scale(0.9);
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .opened {
