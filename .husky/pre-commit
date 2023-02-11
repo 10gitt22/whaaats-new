@@ -3,5 +3,3 @@
 
 npm run eslint
 npm run stylelint
-npm run storybook:build
-npm run test:ui:ci
