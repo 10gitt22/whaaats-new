@@ -1,5 +1,5 @@
 import path from 'path'
-import webpack from 'webpack'
+import webpack, { DefinePlugin } from 'webpack'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import { BuildPaths } from '../build/types/config'
 
@@ -10,14 +10,22 @@ export default ({config}: {config: webpack.Configuration}) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src')
   }
+
+
   config.plugins?.push(new webpack.DefinePlugin({
     __IS_DEV__: JSON.stringify(true)
   }))
-  config.resolve?.modules?.push(paths.src)
+ 
+  config.resolve?.modules?.unshift(paths.src)
+
   config.resolve?.extensions?.push('.ts', '.tsx')
 
   config.module?.rules?.push(buildCssLoader(true))  
-  
+
+  config.plugins?.push(new DefinePlugin({
+    __IS_DEV__: true
+  }))
+
   const fileLoaderRule: any = config.module?.rules?.find(
     (rule: any) => rule.test && rule.test.test(".svg")
   );

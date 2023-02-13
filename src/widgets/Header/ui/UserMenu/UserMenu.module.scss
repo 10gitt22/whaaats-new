@@ -1,21 +1,48 @@
 .UserMenu {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+  position: relative;
 
-  .photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: var(--primary-gradient);
-    font: var(--font-m-medium);
-    color: var(--light-gray);
-    border-radius: 50%;
+  &:hover {
+    cursor: pointer;
   }
 }
 
+.userInfoBlock {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--primary-gradient);
+  font: var(--font-m-medium);
+  color: var(--light-gray);
+  border-radius: 50%;
+}
+
+.userMenuOptions {
+  position: absolute;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-width: 170px;
+  top: 40px;
+  right: 0;
+  z-index: 100;
+}
+
 .dropdownIcon {
+  transition: 0.3s ease;
   fill: var(--secondary-color);
+}
+
+.optionsOpened {
+  .dropdownIcon {
+    rotate: 180deg;
+  }
 }

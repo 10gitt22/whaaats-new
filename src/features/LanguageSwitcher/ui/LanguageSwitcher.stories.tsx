@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { LanguageSwitcher } from './LanguageSwitcher'
 
 const component = {
-  title: 'shared/LanguageSwitcher',
+  title: 'features/LanguageSwitcher',
   component: LanguageSwitcher
 }
 

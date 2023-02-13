@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, memo, SetStateAction } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './BurgerMenu.module.scss'
 
@@ -8,13 +8,13 @@ type BurgerMenuProps = {
   className?: string
 }
 
-export const BurgerMenu: FC<BurgerMenuProps> = ({
+export const BurgerMenu: FC<BurgerMenuProps> = memo(({
   opened,
   setOpened,
   className
 }) => {
   const handleClick = () => {
-    setOpened(!opened)
+    setOpened(prev => !prev)
   }
 
   return (
@@ -30,4 +30,4 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({
       <span></span>
     </div>
   )
-}
+})

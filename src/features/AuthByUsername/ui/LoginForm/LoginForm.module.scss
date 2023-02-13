@@ -14,22 +14,26 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.formLogo {
-  // font: var(--font-h3);
-  // span {
-  //   font-size: 48px;
-  // }
-  // position: absolute;
-  // right: 20px;
-  // top: 0;
-}
-
-.inputBlock {
-  margin: 10px 0;
+  margin-bottom: 20px;
 }
 
 .inputField {
   margin: 20px 0;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--error-color);
+}
+
+.errorIcon {
+  width: 30px;
+  height: 30px;
+  fill: var(--error-color);
+}
+
+.errorMessage {
+  flex: 1;
 }

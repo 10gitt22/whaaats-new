@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Logo.module.scss'
 
@@ -6,11 +6,11 @@ type LogoProps = {
   className?: string
 }
 
-export const Logo: FC<LogoProps> = ({ className }) => {
+export const Logo: FC<LogoProps> = memo(({ className }) => {
   return (
     <div className={classNames(styles.Logo, {}, [className])}>
       {/* eslint-disable i18next/no-literal-string */}
       Whaaat&apos;s <span>new</span>
     </div>
   )
-}
+})

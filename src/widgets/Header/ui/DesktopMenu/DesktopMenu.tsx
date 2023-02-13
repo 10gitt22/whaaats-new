@@ -4,20 +4,21 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { NavLink } from 'shared/ui/NavLink/NavLink'
-import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher'
+import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { RoutePath } from 'app/providers/router/config'
 import { UserMenu } from '../UserMenu/UserMenu'
 import { Button, ButtonVariants } from 'shared/ui/Button/Button'
+import { User } from 'entities/User'
 
 type DesktopMenuProps = {
-  isAuth: boolean
+  authData: User
   className?: string
   openAuthModal: () => void
 }
 
-export const DesktopMenu: FC<DesktopMenuProps> = ({ isAuth, className, openAuthModal }) => {
+export const DesktopMenu: FC<DesktopMenuProps> = ({ authData, className, openAuthModal }) => {
   const { t } = useTranslation()
   return (
     <div className={classNames(styles.DesktopMenu, {}, [className])}>
@@ -27,11 +28,10 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({ isAuth, className, openAuthM
       </div>
       <ThemeSwitcher />
       <LanguageSwitcher />
-      {isAuth
+      {authData
         ? (
           <>
-            {/* eslint-disable i18next/no-literal-string */}
-            <UserMenu userName='Yevhen Gitt' isMobile={false}/>
+            <UserMenu userName={authData.username} isMobile={false}/>
           </>
         )
         : <Button variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>}

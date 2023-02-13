@@ -3,10 +3,12 @@
   "loading": "Завантаження...",
   "logIn": "Логін",
   "main": "Головна",
+  "myProfile": "Мій профіль",
   "pageNotFound": "Сторінка не знайдена",
   "password": "Пароль",
   "reloadPage": "Перезавантажити сторінку",
   "signIn": "Увійти",
+  "signOut": "Вийти",
   "somethingWentWrong": "Щось пішло не так :(",
   "username": "Ім'я користувача"
 }

@@ -1,6 +1,6 @@
 import styles from './LanguageSwitcher.module.scss'
 
-import { FC, memo, useEffect, useState } from 'react'
+import { FC, memo, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -8,6 +8,7 @@ import DropdownIcon from 'shared/assets/icons/dropdown.svg'
 import { LanguageOption, languageOptions } from '../lib/options'
 import { getOption } from '../lib/getOption'
 import { LanguageOptionComponent } from './LanguageOptionComponent'
+import useOutsideAlerter from 'shared/hooks/useOutsideAlerter'
 
 type LanguageSwitcherProps = {
   mobile?: boolean
@@ -22,26 +23,31 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
       getOption(languageOptions, i18n.language)
     )
 
-    const openSelect = (isOpen: boolean) => {
-      setOptionsOpened(!isOpen)
+    const container = useRef(null)
+    useOutsideAlerter({ ref: container, callback: () => setOptionsOpened(false) })
+
+    const toggleDropdown = () => {
+      setOptionsOpened(prev => !prev)
     }
 
     useEffect(() => {
       i18n.changeLanguage(selectedLanguage.locale)
       setOptionsOpened(false)
-    }, [selectedLanguage, i18n])
+    }, [selectedLanguage.locale, i18n])
 
     useEffect(() => {
       setSelectedLanguage(getOption(languageOptions, i18n.language))
     }, [i18n.language])
 
     return (
-      <div className={classNames(styles.LanguageSwitcher, {}, [className])}>
+      <div
+        className={classNames(styles.LanguageSwitcher, {}, [className])}
+        ref={container}>
         <div
           className={classNames(styles.selectedOption, {}, [
             optionsOpened && styles.selectedOptionActive
           ])}
-          onClick={() => openSelect(optionsOpened)}
+          onClick={toggleDropdown}
         >
           <img src={selectedLanguage.icon} width={24} height={24} />
           {selectedLanguage.label}
@@ -49,7 +55,9 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
         </div>
 
         {optionsOpened && (
-          <div className={classNames(styles.languageOptions, {}, [mobile ? styles.mobile : undefined])}>
+          <div
+            className={classNames(styles.languageOptions, {}, [mobile ? styles.mobile : undefined])}
+          >
             {languageOptions.map((option) => {
               return (
                 <LanguageOptionComponent

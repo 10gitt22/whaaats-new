@@ -3,10 +3,12 @@
   "loading": "Loading...",
   "logIn": "Sign In",
   "main": "Main",
+  "myProfile": "My Profile",
   "pageNotFound": "Page not found",
   "password": "Password",
   "reloadPage": "Reload page",
   "signIn": "Sign In",
+  "signOut": "Sign Out",
   "somethingWentWrong": "Something went wrong :(",
   "username": "Username"
 }

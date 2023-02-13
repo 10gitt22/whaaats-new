@@ -1,0 +1,28 @@
+.UserMenuOption {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 20px;
+  gap: 10px;
+
+  &:hover {
+    background-color: var(--border-color);
+    cursor: pointer;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.optionIcon {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-color);
+}
+
+.label {
+  flex: 1;
+}

@@ -29,3 +29,12 @@
     color: var(--primary-color);
   }
 }
+
+.disabled {
+  filter: grayscale(90%);
+
+  &:hover {
+    filter: grayscale(90%);
+    cursor: default;
+  }
+}

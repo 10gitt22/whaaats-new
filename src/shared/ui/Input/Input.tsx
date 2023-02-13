@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, memo } from 'react'
+import { FC, InputHTMLAttributes, memo, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Input.module.scss'
 
@@ -22,9 +22,9 @@ export const Input: FC<InputProps> = memo(({
   type = 'text',
   ...props
 }) => {
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
-  }
+  }, [onChange])
 
   return (
     <div className={classNames(styles.Input, {}, [className])}>

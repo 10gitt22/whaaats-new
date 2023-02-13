@@ -1,6 +1,6 @@
 import styles from './Header.module.scss'
 
-import { FC, useCallback, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import useWindowDimensions from 'shared/hooks/useWindowDimentions'
 import { DesktopMenu } from './DesktopMenu/DesktopMenu'
@@ -8,6 +8,8 @@ import { MobileMenu } from './MobileMenu/MobileMenu'
 import { Logo } from 'shared/ui/Logo/Logo'
 import { LogoSmall } from 'shared/ui/Logo/LogoSmall'
 import { LoginModal } from 'features/AuthByUsername'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 
 type HeaderProps = {
   className?: string
@@ -16,6 +18,7 @@ type HeaderProps = {
 export const Header: FC<HeaderProps> = ({ className }) => {
   const { width } = useWindowDimensions()
   const [openAuthModal, setOpenAuthModal] = useState(false)
+  const authData = useSelector(getUserAuthData)
 
   const onOpenModal = useCallback(() => {
     setOpenAuthModal(true)
@@ -25,6 +28,10 @@ export const Header: FC<HeaderProps> = ({ className }) => {
     setOpenAuthModal(false)
   }, [])
 
+  useEffect(() => {
+    if (authData) onCloseModal()
+  }, [authData, onCloseModal])
+
   return (
     <header className={classNames(styles.header, {}, [className])}>
       {
@@ -32,13 +39,13 @@ export const Header: FC<HeaderProps> = ({ className }) => {
           ? (
             <>
               <Logo />
-              <DesktopMenu isAuth={false} openAuthModal={onOpenModal}/>
+              <DesktopMenu authData={authData} openAuthModal={onOpenModal}/>
             </>
           )
           : (
             <>
               <LogoSmall />
-              <MobileMenu isAuth={false} openAuthModal={onOpenModal}/>
+              <MobileMenu authData={authData} openAuthModal={onOpenModal}/>
             </>
           )
       }
