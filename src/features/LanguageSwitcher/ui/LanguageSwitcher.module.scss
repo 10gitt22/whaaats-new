@@ -4,12 +4,12 @@
 
 .languageOptions {
   position: absolute;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   top: 30px;
   right: 0;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 
   &.mobile {
     top: -450%;
@@ -21,14 +21,14 @@
 }
 
 .dropdownIcon {
-  fill: var(--secondary-color);
   transition: 0.2s linear;
+  fill: var(--secondary-color);
 }
 
 .selectedOption {
   display: flex;
-  align-items: center;
   gap: 5px;
+  align-items: center;
   color: var(--secondary-color);
   border-bottom: none;
 

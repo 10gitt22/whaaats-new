@@ -4,6 +4,7 @@
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.localesPaths": [
     "public/locales",
+    "storybook-static/locales",
     "src/shared/config/i18n"
   ],
   "i18n-ally.keystyle": "flat",
@@ -22,15 +23,19 @@
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
+  "stylelint.enable": true,
   "scss.validate": false,
   "css.validate": false,
   "less.validate": false,
-  // "editor.formatOnSave": true, // this will currently make "eslint.codeActionsOnSave.rules" setting not work
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint":true,
   },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
   "eslint.format.enable": true
 }

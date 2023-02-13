@@ -1,8 +1,8 @@
 .Button {
   font: var(--font-m);
-  transition: 0.2s ease;
-  outline: none;
   border: none;
+  outline: none;
+  transition: 0.2s ease;
 
   &:hover {
     cursor: pointer;
@@ -10,11 +10,11 @@
 }
 
 .primary {
-  border-radius: 50px;
   padding: 10px 15px;
+  color: var(--secondary-color-inverted);
   font: var(--font-m-medium);
   background: var(--primary-gradient);
-  color: var(--secondary-color-inverted);
+  border-radius: 50px;
 
   &:hover {
     filter: hue-rotate(60deg);
@@ -22,8 +22,8 @@
 }
 
 .clear {
-  background: none;
   color: var(--secondary-color);
+  background: none;
 
   &:hover {
     color: var(--primary-color);
@@ -34,7 +34,7 @@
   filter: grayscale(90%);
 
   &:hover {
-    filter: grayscale(90%);
     cursor: default;
+    filter: grayscale(90%);
   }
 }

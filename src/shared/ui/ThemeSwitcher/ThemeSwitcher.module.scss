@@ -1,13 +1,13 @@
 .ThemeSwitcher {
+  position: relative;
   display: flex;
   align-items: center;
   width: 50px;
   height: 20px;
-  border-radius: 10px;
   background-color: rgb(255 255 255 / 0%);
-  box-shadow: 1px 1px 6px -4px var(--secondary-color) inset;
-  position: relative;
   border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px -4px var(--secondary-color) inset;
 
   &.primary {
     .switch {
@@ -28,17 +28,17 @@
 }
 
 .switch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
-  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 26px;
-  border-radius: 10px;
+  height: 26px;
   background: var(--primary-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
   box-shadow: 1px 1px 6px -4px var(--secondary-color) inset;
   transition: var(--default-transition);
-  border: 1px solid var(--border-color);
 
   .icon {
     width: 16px;

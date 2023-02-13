@@ -1,9 +1,9 @@
 .languageOption {
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px 20px;
   gap: 5px;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
 
   &:hover {
     background-color: var(--border-color);
@@ -12,7 +12,7 @@
 
   &:last-child {
     border-bottom: none;
-    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 }

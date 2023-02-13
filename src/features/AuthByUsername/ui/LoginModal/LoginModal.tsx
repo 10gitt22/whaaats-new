@@ -1,8 +1,6 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
 import { Modal } from 'shared/ui/Modal/Modal'
 import { LoginForm } from '../LoginForm/LoginForm'
-import styles from './LoginModal.module.scss'
 
 type LoginModalProps = {
   className?: string
@@ -15,7 +13,6 @@ export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) 
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className={classNames(styles.LoginModal, {}, [className])}
       lazy
     >
       <LoginForm />
