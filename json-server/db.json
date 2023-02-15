@@ -8,9 +8,20 @@
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "gitt22",
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Yevhen",
+      "lastName": "Gitt",
+      "age": 21,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "username": "gitt22" ,
+      "avatar": ""
+    }
+  ]
 }

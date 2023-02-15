@@ -1,9 +1,12 @@
-import { User } from 'entities/User'
-import { FC, memo, useCallback, useState } from 'react'
+import { FC, memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
+
+import { User } from 'entities/User'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { BurgerMenu } from 'shared/ui/BurgerMenu/BurgerMenu'
 import { Button, ButtonVariants } from 'shared/ui/Button/Button'
+
 import { Sidebar } from '../Sidebar/Sidebar'
 import { UserMenu } from '../UserMenu/UserMenu'
 import styles from './MobileMenu.module.scss'
@@ -17,10 +20,11 @@ type MobileMenuProps = {
 export const MobileMenu: FC<MobileMenuProps> = memo(({ authData, className, openAuthModal }) => {
   const { t } = useTranslation()
   const [sidebarOpened, setSidebarOpened] = useState(false)
+  const location = useLocation()
 
-  const handleChangePage = useCallback(() => {
+  useEffect(() => {
     setSidebarOpened(false)
-  }, [setSidebarOpened])
+  }, [location])
 
   return (
     <>
@@ -39,7 +43,7 @@ export const MobileMenu: FC<MobileMenuProps> = memo(({ authData, className, open
         />
 
       </div>
-      {sidebarOpened && <Sidebar handleChangePage={handleChangePage}/>}
+      {sidebarOpened && <Sidebar/>}
     </>
   )
 })

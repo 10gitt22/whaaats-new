@@ -11,6 +11,8 @@ import SignOutIcon from 'shared/assets/icons/logout.svg'
 import { UserMenuOption } from './UserMenuOption'
 import { userActions } from 'entities/User'
 import styles from './UserMenu.module.scss'
+import { useNavigate } from 'react-router-dom'
+import { RoutePath } from 'app/providers/router/config'
 
 type UserMenuProps = {
   className?: string
@@ -21,6 +23,7 @@ type UserMenuProps = {
 export const UserMenu: FC<UserMenuProps> = memo(({ className, userName, isMobile }) => {
   const { t } = useTranslation()
   const [userMenuDropdown, setUserMenuDropdown] = useState(false)
+  const navigate = useNavigate()
 
   const container = useRef(null)
   useOutsideAlerter({ ref: container, callback: () => setUserMenuDropdown(false) })
@@ -33,6 +36,10 @@ export const UserMenu: FC<UserMenuProps> = memo(({ className, userName, isMobile
   const toggleDropdown = () => {
     setUserMenuDropdown(prev => !prev)
   }
+
+  const toProfilePage = useCallback(() => {
+    navigate(RoutePath.profile)
+  }, [navigate])
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout())
@@ -65,6 +72,7 @@ export const UserMenu: FC<UserMenuProps> = memo(({ className, userName, isMobile
             key={myProfile}
             label={myProfile}
             icon={ProfileIcon}
+            onClick={toProfilePage}
           />
           <UserMenuOption
             key={signOut}

@@ -11,23 +11,17 @@ import styles from './Sidebar.module.scss'
 
 type SidebarProps = {
   className?: string
-  handleChangePage: () => void
-
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className, handleChangePage }) => {
+export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-
-  const onClose = () => {
-    handleChangePage()
-  }
 
   return (
     <Portal>
       <div className={classNames(styles.Sidebar, {}, [`app_theme_${theme}`, className])}>
-        <NavLink to={RoutePath.main} onClick={onClose}>{t('main')}</NavLink>
-        <NavLink to={RoutePath.about} onClick={onClose}>{t('about')}</NavLink>
+        <NavLink to={RoutePath.main}>{t('main')}</NavLink>
+        <NavLink to={RoutePath.about}>{t('about')}</NavLink>
         <div className={styles.footer}>
           <LanguageSwitcher mobile={true}/>
           <ThemeSwitcher />

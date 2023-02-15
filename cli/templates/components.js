@@ -2,7 +2,7 @@ exports.pageComponent = name => `import { useTranslation } from 'react-i18next'
 
 const ${name} = () => {
   const { t } = useTranslation()
-  return <div className="page">{t('${name.toLowerCase()}}')}</div>
+  return <div className="page">{t('${name.toLowerCase()}')}</div>
 }
 
 export default ${name}
