@@ -4,13 +4,13 @@ import DropdownIcon from 'shared/assets/icons/dropdown.svg'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 import ProfileIcon from 'shared/assets/icons/profile.svg'
+import { useOutsideAlerter } from 'shared/lib/hooks/useOutsideAlerter'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import SignOutIcon from 'shared/assets/icons/logout.svg'
 
-import styles from './UserMenu.module.scss'
 import { UserMenuOption } from './UserMenuOption'
-import { useDispatch } from 'react-redux'
 import { userActions } from 'entities/User'
-import useOutsideAlerter from 'shared/hooks/useOutsideAlerter'
+import styles from './UserMenu.module.scss'
 
 type UserMenuProps = {
   className?: string
@@ -25,7 +25,7 @@ export const UserMenu: FC<UserMenuProps> = memo(({ className, userName, isMobile
   const container = useRef(null)
   useOutsideAlerter({ ref: container, callback: () => setUserMenuDropdown(false) })
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const myProfile = t('myProfile')
   const signOut = t('signOut')

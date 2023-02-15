@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
-import { useTheme } from 'shared/hooks/useTheme'
+import { useTheme } from 'shared/lib/hooks/useTheme'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from 'shared/ui/Portal/Portal'
 import styles from './Modal.module.scss'

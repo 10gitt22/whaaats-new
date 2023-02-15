@@ -1,8 +1,9 @@
 import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import useWindowDimensions from 'shared/hooks/useWindowDimentions'
+import useWindowDimensions from 'shared/lib/hooks/useWindowDimentions'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui/Button/Button'
@@ -31,7 +32,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const { t } = useTranslation()
   const { width } = useWindowDimensions()
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginIsLoading)

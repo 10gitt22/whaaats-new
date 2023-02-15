@@ -5,7 +5,7 @@ type OutsideAlerterProps = {
   callback: () => void
 }
 
-export default function useOutsideAlerter ({ ref, callback }: OutsideAlerterProps) {
+export function useOutsideAlerter ({ ref, callback }: OutsideAlerterProps) {
   useEffect(() => {
     function handleClickOutside (event: globalThis.MouseEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) {

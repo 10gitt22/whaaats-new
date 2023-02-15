@@ -8,7 +8,7 @@ import DropdownIcon from 'shared/assets/icons/dropdown.svg'
 import { LanguageOption, languageOptions } from '../lib/options'
 import { getOption } from '../lib/getOption'
 import { LanguageOptionComponent } from './LanguageOptionComponent'
-import useOutsideAlerter from 'shared/hooks/useOutsideAlerter'
+import { useOutsideAlerter } from 'shared/lib/hooks/useOutsideAlerter'
 
 type LanguageSwitcherProps = {
   mobile?: boolean

@@ -1,7 +1,7 @@
 import styles from './ThemeSwitcher.module.scss'
 
 import { FC } from 'react'
-import { useTheme } from 'shared/hooks/useTheme'
+import { useTheme } from 'shared/lib/hooks/useTheme'
 import { classNames } from 'shared/lib/classNames/classNames'
 import LightIcon from 'shared/assets/icons/sun.svg'
 import DarkIcon from 'shared/assets/icons/night.svg'

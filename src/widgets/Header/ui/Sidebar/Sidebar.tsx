@@ -1,7 +1,7 @@
 import { RoutePath } from 'app/providers/router/config'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useTheme } from 'shared/hooks/useTheme'
+import { useTheme } from 'shared/lib/hooks/useTheme'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { NavLink } from 'shared/ui/NavLink/NavLink'

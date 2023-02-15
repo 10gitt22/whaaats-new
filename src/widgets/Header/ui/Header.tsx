@@ -2,7 +2,7 @@ import styles from './Header.module.scss'
 
 import { FC, useCallback, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import useWindowDimensions from 'shared/hooks/useWindowDimentions'
+import useWindowDimensions from 'shared/lib/hooks/useWindowDimentions'
 import { DesktopMenu } from './DesktopMenu/DesktopMenu'
 import { MobileMenu } from './MobileMenu/MobileMenu'
 import { Logo } from 'shared/ui/Logo/Logo'
