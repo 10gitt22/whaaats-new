@@ -37,8 +37,6 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
 
-  console.log(error, 'ERR')
-
   const usernameT = t('username')
   const passwordT = t('password')
 
