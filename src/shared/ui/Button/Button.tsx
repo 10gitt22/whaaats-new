@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
@@ -13,7 +13,7 @@ type ButtonProps = {
   disabled?: boolean
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = memo(({
   children,
   className,
   variant = ButtonVariants.PRIMARY,
@@ -34,4 +34,4 @@ export const Button: FC<ButtonProps> = ({
       {children}
     </button>
   )
-}
+})

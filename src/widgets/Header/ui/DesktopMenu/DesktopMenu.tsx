@@ -1,6 +1,6 @@
 import styles from './DesktopMenu.module.scss'
 
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { NavLink } from 'shared/ui/NavLink/NavLink'
@@ -18,7 +18,7 @@ type DesktopMenuProps = {
   openAuthModal: () => void
 }
 
-export const DesktopMenu: FC<DesktopMenuProps> = ({ authData, className, openAuthModal }) => {
+export const DesktopMenu: FC<DesktopMenuProps> = memo(({ authData, className, openAuthModal }) => {
   const { t } = useTranslation()
   return (
     <div className={classNames(styles.DesktopMenu, {}, [className])}>
@@ -37,4 +37,4 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({ authData, className, openAut
         : <Button variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>}
     </div>
   )
-}
+})

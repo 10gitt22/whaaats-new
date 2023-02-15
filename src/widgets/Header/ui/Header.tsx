@@ -1,6 +1,6 @@
 import styles from './Header.module.scss'
 
-import { FC, useCallback, useEffect, useState } from 'react'
+import { FC, memo, useCallback, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import useWindowDimensions from 'shared/lib/hooks/useWindowDimentions'
 import { DesktopMenu } from './DesktopMenu/DesktopMenu'
@@ -15,7 +15,7 @@ type HeaderProps = {
   className?: string
 }
 
-export const Header: FC<HeaderProps> = ({ className }) => {
+export const Header: FC<HeaderProps> = memo(({ className }) => {
   const { width } = useWindowDimensions()
   const [openAuthModal, setOpenAuthModal] = useState(false)
   const authData = useSelector(getUserAuthData)
@@ -52,4 +52,4 @@ export const Header: FC<HeaderProps> = ({ className }) => {
       {!authData && <LoginModal isOpen={openAuthModal} onClose={onCloseModal} /> }
     </header>
   )
-}
+})

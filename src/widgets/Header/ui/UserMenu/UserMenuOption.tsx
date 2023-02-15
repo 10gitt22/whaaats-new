@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './UserMenuOption.module.scss'
 
@@ -9,7 +9,7 @@ type UserMenuOptionProps = {
   onClick?: () => void
 }
 
-export const UserMenuOption: FC<UserMenuOptionProps> = ({ className, label, icon: Icon, onClick }) => {
+export const UserMenuOption: FC<UserMenuOptionProps> = memo(({ className, label, icon: Icon, onClick }) => {
   return (
     <div
       className={classNames(styles.UserMenuOption, {}, [className])}
@@ -19,4 +19,4 @@ export const UserMenuOption: FC<UserMenuOptionProps> = ({ className, label, icon
       <div className={styles.label}>{label}</div>
     </div>
   )
-}
+})

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './CircleLoader.module.scss'
 
@@ -6,7 +6,7 @@ type CircleLoaderProps = {
   className?: string
 }
 
-export const CircleLoader: FC<CircleLoaderProps> = ({ className }) => {
+export const CircleLoader: FC<CircleLoaderProps> = memo(({ className }) => {
   return (
     <div className={classNames(styles.CircleLoader, {}, [className])}>
       <svg className={styles.circular} viewBox="25 25 50 50">
@@ -14,4 +14,4 @@ export const CircleLoader: FC<CircleLoaderProps> = ({ className }) => {
       </svg>
     </div>
   )
-}
+})

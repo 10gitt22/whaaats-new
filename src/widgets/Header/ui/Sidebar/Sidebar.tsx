@@ -1,5 +1,5 @@
 import { RoutePath } from 'app/providers/router/config'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -13,7 +13,7 @@ type SidebarProps = {
   className?: string
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 
@@ -29,4 +29,4 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       </div>
     </Portal>
   )
-}
+})
