@@ -49,7 +49,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'label']
+      ignoreAttribute: ['data-testid', 'to', 'label', 'keyName']
     }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',

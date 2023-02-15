@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
+import { CircleLoader } from 'shared/ui/CircleLoader/CircleLoader'
 import { Modal } from 'shared/ui/Modal/Modal'
-import { LoginForm } from '../LoginForm/LoginForm'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 type LoginModalProps = {
   className?: string
@@ -15,7 +16,9 @@ export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) 
       onClose={onClose}
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<CircleLoader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }

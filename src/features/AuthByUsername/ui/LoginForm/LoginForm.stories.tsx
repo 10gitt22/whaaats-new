@@ -4,17 +4,11 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Modal } from 'shared/ui/Modal/Modal'
 
-import { LoginForm } from './LoginForm'
+import LoginForm from './LoginForm'
 
 const component = {
   title: 'features/AuthByUsername/LoginForm',
-  component: LoginForm,
-  decorators: [StoreDecorator({
-    loginForm: {
-      username: 'admin',
-      password: '123'
-    }
-  })]
+  component: LoginForm
 }
 
 export default component as ComponentMeta<typeof LoginForm>
@@ -22,8 +16,20 @@ export default component as ComponentMeta<typeof LoginForm>
 const Template: ComponentStory<typeof LoginForm> = (args) => <Modal isOpen={true}><LoginForm {...args} /></Modal>
 
 export const Primary = Template.bind({})
+Primary.decorators = [StoreDecorator({
+  loginForm: {
+    username: 'admin',
+    password: '123'
+  }
+})]
+
 export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+  loginForm: {
+    username: 'admin',
+    password: '123'
+  }
+})]
 
 export const WithError = Template.bind({})
 WithError.decorators = [StoreDecorator({
@@ -35,7 +41,7 @@ WithError.decorators = [StoreDecorator({
 })]
 
 export const Loading = Template.bind({})
-WithError.decorators = [StoreDecorator({
+Loading.decorators = [StoreDecorator({
   loginForm: {
     username: 'admin',
     password: '123',

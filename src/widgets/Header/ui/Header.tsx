@@ -49,7 +49,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
             </>
           )
       }
-      <LoginModal isOpen={openAuthModal} onClose={onCloseModal} />
+      {!authData && <LoginModal isOpen={openAuthModal} onClose={onCloseModal} /> }
     </header>
   )
 }
