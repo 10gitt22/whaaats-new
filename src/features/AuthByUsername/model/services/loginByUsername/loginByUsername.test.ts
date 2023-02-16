@@ -13,11 +13,11 @@ describe('loginByUsername', () => {
       id: '1'
     }
 
-    mockedAxios.post.mockReturnValue(Promise.resolve({
+    const thunk = new TestAsyncThunk(loginByUsername)
+    thunk.api.post.mockReturnValue(Promise.resolve({
       data: authData
     }))
 
-    const thunk = new TestAsyncThunk(loginByUsername)
     const result = await thunk.callThunk({ username: 'admin', password: '123' })
 
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(authData))
@@ -28,9 +28,8 @@ describe('loginByUsername', () => {
   })
 
   test('error login', async () => {
-    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }))
-
     const thunk = new TestAsyncThunk(loginByUsername)
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }))
     const result = await thunk.callThunk({
       username: 'admin',
       password: '123khj'
