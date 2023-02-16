@@ -20,7 +20,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
     const { i18n } = useTranslation()
     const [optionsOpened, setOptionsOpened] = useState(false)
     const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(
-      getOption(languageOptions, i18n.language)
+      getOption(languageOptions, i18n.language) || languageOptions[0]
     )
 
     const container = useRef(null)
@@ -36,7 +36,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
     }, [selectedLanguage.locale, i18n])
 
     useEffect(() => {
-      setSelectedLanguage(getOption(languageOptions, i18n.language))
+      setSelectedLanguage(getOption(languageOptions, i18n.language) || languageOptions[0])
     }, [i18n.language])
 
     return (
@@ -45,7 +45,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = memo(
         ref={container}>
         <div
           className={classNames(styles.selectedOption, {}, [
-            optionsOpened && styles.selectedOptionActive
+            optionsOpened ? styles.selectedOptionActive : undefined
           ])}
           onClick={toggleDropdown}
         >

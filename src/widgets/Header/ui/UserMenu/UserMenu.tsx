@@ -53,7 +53,7 @@ export const UserMenu: FC<UserMenuProps> = memo(({ className, userName, isMobile
     >
       <div
         className={classNames(styles.userInfoBlock, {}, [
-          userMenuDropdown && styles.optionsOpened
+          userMenuDropdown ? styles.optionsOpened : undefined
         ])}
       >
         <div className={styles.photo}>{userName[0]}</div>

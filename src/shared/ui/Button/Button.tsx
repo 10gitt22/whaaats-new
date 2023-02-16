@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
 export const enum ButtonVariants {
@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = memo(({
   disabled,
   ...otherProps
 }) => {
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles[variant]]: true,
     [styles.disabled]: disabled
   }

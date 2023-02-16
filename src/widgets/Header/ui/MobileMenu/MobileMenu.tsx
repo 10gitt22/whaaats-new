@@ -12,7 +12,7 @@ import { UserMenu } from '../UserMenu/UserMenu'
 import styles from './MobileMenu.module.scss'
 
 type MobileMenuProps = {
-  authData: User
+  authData: User | undefined
   className?: string
   openAuthModal: () => void
 }

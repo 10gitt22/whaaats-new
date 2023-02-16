@@ -10,7 +10,8 @@ type LanguageOptionProps = LanguageOption & {
 export const LanguageOptionComponent: FC<LanguageOptionProps> = memo(
   ({ locale, label, icon, setSelectedLanguage }) => {
     const setLanguage = useCallback(() => {
-      setSelectedLanguage(getOption(languageOptions, locale))
+      const option = getOption(languageOptions, locale)
+      setSelectedLanguage(option || languageOptions[0])
     }, [locale, setSelectedLanguage])
 
     return (

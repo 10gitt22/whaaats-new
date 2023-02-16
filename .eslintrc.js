@@ -47,6 +47,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'no-undef': 'off',
+    "@typescript-eslint/no-non-null-assertion": "warn",
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'to', 'label', 'keyName']

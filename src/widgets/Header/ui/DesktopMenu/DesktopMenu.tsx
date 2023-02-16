@@ -13,7 +13,7 @@ import { Button, ButtonVariants } from 'shared/ui/Button/Button'
 import { User } from 'entities/User'
 
 type DesktopMenuProps = {
-  authData: User
+  authData: User | undefined
   className?: string
   openAuthModal: () => void
 }
