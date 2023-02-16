@@ -6,6 +6,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export function buildPlugins ({
   paths,
+  apiUrl,
   analyze,
   isDev
 }: BuildOptions): webpack.WebpackPluginInstance[] {
@@ -20,7 +21,8 @@ export function buildPlugins ({
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
     new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
+      __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl)
     }),
   ].filter(Boolean)
 

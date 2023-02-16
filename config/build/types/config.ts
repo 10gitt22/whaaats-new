@@ -12,11 +12,13 @@ export type BuildOptions = {
   paths: BuildPaths
   isDev: boolean
   port: number
+  apiUrl: string
   analyze: boolean
 }
 
 export type BuildEnv = {
   mode: BuildMode
   port: number
+  apiUrl: string
   analyze: boolean
 }
