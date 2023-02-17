@@ -13,7 +13,19 @@
   border: solid 1px var(--border-color);
   border-radius: var(--default-radius);
   outline: none;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:-webkit-autofill,
+.inputField:-webkit-autofill:hover,
+.inputField:-webkit-autofill:active {
+  border-color: var(--autofill-border-collor);
+  box-shadow: 0 0 0 50px var(--bg-color) inset;
+  -webkit-text-fill-color: var(--secondary-color);
+}
+
+.inputField:-webkit-autofill:focus {
+  border-color: var(--primary-color);
 }
 
 .inputLabel {
