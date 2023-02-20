@@ -5,6 +5,8 @@ import styles from './Button.module.scss'
 export const enum ButtonVariants {
   CLEAR = 'clear',
   PRIMARY = 'primary',
+  OUTLINED = 'outlined',
+  FILLED = 'filled'
 }
 
 type ButtonProps = {

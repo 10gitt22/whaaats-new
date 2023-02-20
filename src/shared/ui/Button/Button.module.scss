@@ -1,5 +1,6 @@
 .Button {
-  font: var(--font-m);
+  font-size: var(--font-size-m);
+  font-family: var(--font-family-primary);
   border: none;
   outline: none;
   transition: 0.2s ease;
@@ -12,7 +13,7 @@
 .primary {
   padding: 10px 15px;
   color: var(--secondary-color-inverted);
-  font: var(--font-m-medium);
+  font-weight: 500;
   background: var(--primary-gradient);
   border-radius: 50px;
 
@@ -36,5 +37,34 @@
   &:hover {
     cursor: default;
     filter: grayscale(90%);
+  }
+}
+
+.outlined{
+  padding: 10px 15px;
+  color: var(--secondary-color);
+  background: none;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+
+  &:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}
+
+.filled {
+  padding: 10px 15px;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: 10px;
+
+  svg {
+    transition: .2s ease;
+    fill: var(--black);
+  }
+
+  &:hover {
+    background-color: var(--light-gray);
   }
 }

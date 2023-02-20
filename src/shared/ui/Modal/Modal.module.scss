@@ -38,7 +38,7 @@
 }
 
 .opened {
-  z-index: var(--modal-z-index);
+  z-index: var(--popup-z-index);
   opacity: 1;
   pointer-events: auto;
 

@@ -1,56 +1,28 @@
 :root {
   // FONT
-  --font-family-primary: mariupol-regular;
-  --font-family-primary-medium: mariupol-medium;
-  --font-family-primary-bold: mariupol-bold;
+  --font-family-primary: mariupol;
   --font-size-m: 16px;
-  --font-line-m: 24px;
-  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-primary);
-  --font-m-medium:
-    var(--font-size-m) / var(--font-line-m)
-    var(--font-family-primary-medium);
-  --font-m-bold:
-    var(--font-size-m) / var(--font-line-m)
-    var(--font-family-primary-bold);
   --font-size-l: 24px;
-  --font-line-l: 32px;
-  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-primary);
-  --font-l-medium:
-    var(--font-size-l) / var(--font-line-l)
-    var(--font-family-primary-medium);
-  --font-l-bold:
-    var(--font-size-l) / var(--font-line-l)
-    var(--font-family-primary-bold);
   --font-size-xl: 32px;
-  --font-line-xl: 40px;
-  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-primary);
-  --font-xl-medium:
-    var(--font-size-xl) / var(--font-line-xl)
-    var(--font-family-primary-medium);
-  --font-xl-bold:
-    var(--font-size-xl) / var(--font-line-xl)
-    var(--font-family-primary-bold);
   --font-h1-size: 96px;
-  --font-h1-line: 104px;
-  --font-h1: var(--font-h1-size) / var(--font-h1-line) var(--font-family-primary-bold);
   --font-h2-size: 72px;
-  --font-h2-line: 80px;
-  --font-h2: var(--font-h2-size) / var(--font-h2-line) var(--font-family-primary-bold);
   --font-h3-size: 48px;
-  --font-h3-line: 56px;
-  --font-h3: var(--font-h3-size) / var(--font-h3-line) var(--font-family-primary-bold);
 
   // RADIUSES
   --default-radius: 25px;
 
   // SIZES
   --header-height: 60px;
+  --profile-background-height: 300px;
 
   // DEFAULT COLORS
+  --white: rgb(240 240 240);
+  --black: rgb(29 29 29);
   --light-gray: #ddd;
   --gray: #999;
   --dark-gray: #333;
   --overlay-color: rgb(0 0 0 / 60%);
+  --success-color: #00ff1a;
   --error-color: rgb(247 84 84);
   --error-background: rgb(156 18 18 / 39.7%);
 
@@ -60,20 +32,25 @@
   --modal-content-transition: 0.5s ease;
 
   // Z-INDEXES
-  --modal-z-index: 10;
+  --modal-z-index: 50;
+  --popup-z-index: 20;
+  --page-z-index: 0;
 }
 
 @font-face {
-  font-family: Mariupol-Regular;
+  font-weight: 400;
+  font-family: Mariupol;
   src: url("shared/assets/fonts/Mariupol-Regular.ttf");
 }
 
 @font-face {
-  font-family: Mariupol-Medium;
+  font-weight: 500;
+  font-family: Mariupol;
   src: url("shared/assets/fonts/Mariupol-Medium.ttf");
 }
 
 @font-face {
-  font-family: Mariupol-Bold;
+  font-weight: 700;
+  font-family: Mariupol;
   src: url("shared/assets/fonts/Mariupol-Bold.ttf");
 }

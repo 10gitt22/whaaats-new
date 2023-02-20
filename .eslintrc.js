@@ -54,7 +54,7 @@ module.exports = {
       ignoreAttribute: ['data-testid', 'to', 'label', 'keyName']
     }],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   globals: {
     __IS_DEV__: true,

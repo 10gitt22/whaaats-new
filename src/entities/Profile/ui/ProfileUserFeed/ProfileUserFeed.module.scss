@@ -1,0 +1,18 @@
+.ProfileUserFeed{
+  width: 100%;
+  padding: 50px 0;
+}
+
+.emptyBlock {
+  width: 100%;
+  color: var(--secondary-color);
+  font-weight: 300;
+  font-size: var(--font-size-m);
+}
+
+@media (max-width: 1100px) {
+  .ProfileUserFeed{
+    padding: 25px 0;
+    border-top: 1px solid var(--border-color);
+  }
+}

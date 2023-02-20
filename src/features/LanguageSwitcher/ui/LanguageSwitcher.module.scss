@@ -1,5 +1,6 @@
 .LanguageSwitcher {
   position: relative;
+  z-index: var(--popup-z-index);
 }
 
 .languageOptions {

@@ -3,11 +3,23 @@
 @import "themes/primary";
 @import "themes/dark";
 
+html,
 body,
 .storybook {
   color: var(--secondary-color);
-  font: var(--font-m);
+  font-size: var(--font-size-m);
+  font-family: var(--font-family-primary);
   background: var(--bg-color);
+}
+
+html {
+  cursor: pointer;
+}
+
+body{
+  max-height: calc(100vh - var(--header-height));
+  overflow: overlay;
+  cursor: default;
 }
 
 .storybook {
@@ -19,21 +31,41 @@ body,
 }
 
 .page {
+  z-index: var(--page-z-index);
   width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
   margin-top: var(--header-height);
   padding: 25px;
+  overflow-y: scroll;
 }
 
 h1 {
-  font: var(--font-h1);
+  font-size: var(--font-h1-size);
 }
 
 h2 {
-  font: var(--font-h2);
+  font-size: var(--font-h2-size);
 }
 
 h3 {
-  font: var(--font-h3);
+  font-size: var(--font-h3-size);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+
+  &:hover {
+    background-color: var(--gray);
+  }
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }

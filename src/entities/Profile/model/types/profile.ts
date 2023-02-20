@@ -1,14 +1,13 @@
-import { Currency } from 'shared/const/common'
-
 export interface Profile {
   id: string
   firstName: string
   lastName: string
   age: number
-  currency: Currency
+  currency: 'UAH' | 'EUR' | 'USD'
   country: string
   username: string
-  avatar: string
+  avatar: string | null
+  backgroundPhoto: string | null
 }
 
 export interface ProfileSchema {

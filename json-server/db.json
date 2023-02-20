@@ -12,16 +12,15 @@
       "password": "123"
     }
   ],
-  "profile": [
-    {
-      "id": "1",
-      "firstName": "Yevhen",
-      "lastName": "Gitt",
-      "age": 21,
-      "currency": "UAH",
-      "country": "Ukraine",
-      "username": "gitt22" ,
-      "avatar": ""
-    }
-  ]
+  "profile": {
+    "id": "1",
+    "firstName": "Yevhen",
+    "lastName": "Gitt",
+    "age": 21,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "username": "gitt22" ,
+    "avatar": "https://www.ispca.ie/-/rehoming/midnight_1.jpg",
+    "backgroundPhoto": "https://wallpaper.dog/large/20501895.jpg"
+  }
 }

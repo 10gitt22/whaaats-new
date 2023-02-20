@@ -1,0 +1,46 @@
+.Profile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.profileBackgroundSection {
+  z-index: 0;
+}
+
+.pageContentSection {
+  display: flex;
+  gap: 75px;
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 150px;
+}
+
+.profileUserFeedSection{
+  margin-top: 150px;
+}
+
+@media (max-width: 1100px) {
+  .pageContentSection{
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .profileUserFeedSection {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContentSection {
+    margin-top: 75px;
+  }
+
+  .profileBackgroundSection {
+    height: 150px;
+  }
+}

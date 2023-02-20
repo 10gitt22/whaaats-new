@@ -1,0 +1,15 @@
+.Toast{
+  width: 300px;
+}
+
+.error {
+  color: var(--error-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--error-color);
+}
+
+.success {
+  color: var(--success-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--success-color);
+}

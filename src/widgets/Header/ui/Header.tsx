@@ -29,6 +29,8 @@ export const Header: FC<HeaderProps> = memo(({ className }) => {
   }, [])
 
   useEffect(() => {
+    console.log(authData, 'authData')
+
     if (authData) onCloseModal()
   }, [authData, onCloseModal])
 

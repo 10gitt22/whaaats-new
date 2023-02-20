@@ -1,12 +1,13 @@
 .app_theme_primary {
-  --bg-color: rgb(240 240 240);
+  --bg-color: var(--white);
   --primary-color: #f17fea;
-  --secondary-color: rgb(29 29 29);
-  --secondary-color-inverted: rgb(240 240 240);
+  --secondary-color: var(--black);
+  --secondary-color-inverted: var(--white);
   --border-color: var(--light-gray);
   --gradient-color-1: var(--primary-color);
   --gradient-color-2: rgb(115 32 179 / 100%);
   --autofill-border-collor: var(--light-gray);
+  --scrollbar-thumb-color: #bbb;
   --primary-gradient:
     linear-gradient(
       100deg,

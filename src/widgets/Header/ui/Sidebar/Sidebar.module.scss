@@ -1,11 +1,13 @@
 .Sidebar {
   position: absolute;
   top: var(--header-height);
-  left: 0;
+  z-index: var(--sidebar-z-index);
   display: flex;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - var(--header-height));
+
+  // height: 100%;
   overflow: hidden;
   background-color: var(--bg-color);
   transform-origin: bottom;
@@ -14,7 +16,7 @@
   a {
     width: 100%;
     padding: 25px;
-    font: var(--font-xl);
+    font-size: var(--font-size-xl);
     background-color: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
   }

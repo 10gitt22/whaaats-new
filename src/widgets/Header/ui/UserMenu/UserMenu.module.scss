@@ -1,5 +1,6 @@
 .UserMenu {
   position: relative;
+  z-index: var(--popup-z-index);
 
   &:hover {
     cursor: pointer;
@@ -19,7 +20,7 @@
   width: 32px;
   height: 32px;
   color: var(--light-gray);
-  font: var(--font-m-medium);
+  font-weight: 500;
   background: var(--primary-gradient);
   border-radius: 50%;
 }
@@ -28,7 +29,6 @@
   position: absolute;
   top: 40px;
   right: 0;
-  z-index: 100;
   min-width: 170px;
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);

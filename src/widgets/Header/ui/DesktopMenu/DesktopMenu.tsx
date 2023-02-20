@@ -20,6 +20,7 @@ type DesktopMenuProps = {
 
 export const DesktopMenu: FC<DesktopMenuProps> = memo(({ authData, className, openAuthModal }) => {
   const { t } = useTranslation()
+
   return (
     <div className={classNames(styles.DesktopMenu, {}, [className])}>
       <div className={styles.nav}>
