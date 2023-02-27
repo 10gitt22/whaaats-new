@@ -51,7 +51,7 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "warn",
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'label', 'keyName']
+      ignoreAttribute: ['data-testid', 'to', 'label', 'keyName', 'name']
     }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

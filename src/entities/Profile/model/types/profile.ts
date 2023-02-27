@@ -3,7 +3,6 @@ export interface Profile {
   firstName: string
   lastName: string
   age: number
-  currency: 'UAH' | 'EUR' | 'USD'
   country: string
   username: string
   avatar: string | null

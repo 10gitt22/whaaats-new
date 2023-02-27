@@ -1,7 +1,12 @@
 {
-  "age": "Вік",
-  "editBackground": "Редагувати фон",
-  "editProfile": "Редагувати профіль",
+  "editBackgroundPhoto": "Редагування фону",
+  "editProfile": "Редагування профілю",
   "emptyFeed": "ваша стрічка порожня",
-  "noPostsYet": "поки нема постів"
+  "noPostsYet": "поки нема постів",
+  "profileAvatarUpdated": "Аватар успішно оновлено",
+  "profileBackgroundUpdated": "Фон успішно оновлено",
+  "profileDataUpdated": "Профіль успішно оновлено",
+  "toEditAvatar": "Редагувати аватар",
+  "toEditBackground": "Редагувати фон",
+  "toEditProfile": "Редагувати профіль"
 }

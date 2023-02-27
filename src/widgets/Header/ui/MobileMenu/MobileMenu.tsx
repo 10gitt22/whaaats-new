@@ -35,7 +35,7 @@ export const MobileMenu: FC<MobileMenuProps> = memo(({ authData, className, open
               <UserMenu userName={authData.username} isMobile={true}/>
             </>
           )
-          : <Button variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>
+          : <Button className={styles.loginButton} variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>
         }
         <BurgerMenu
           opened={sidebarOpened}

@@ -5,11 +5,9 @@
   "main": "Main",
   "myProfile": "My Profile",
   "pageNotFound": "Page not found",
-  "password": "Password",
   "profile": "Profile",
   "reloadPage": "Reload page",
   "signIn": "Sign In",
   "signOut": "Sign Out",
-  "somethingWentWrong": "Something went wrong :(",
-  "username": "Username"
+  "somethingWentWrong": "Something went wrong :("
 }

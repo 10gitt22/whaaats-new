@@ -5,7 +5,16 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
-import { fetchProfileData, ProfileBackground, ProfileCard, ProfileUserFeed, profileReducer, getProfileData, getProfileError, getProfileIsLoading } from 'entities/Profile'
+import {
+  profileReducer,
+  fetchProfileData,
+  getProfileData,
+  getProfileError,
+  getProfileIsLoading,
+  ProfileBackground,
+  ProfileCard,
+  ProfileUserFeed
+} from 'entities/Profile'
 
 import styles from './Profile.module.scss'
 import { PageLoader } from 'widgets/PageLoader/PageLoader'
@@ -43,13 +52,14 @@ const Profile = memo(() => {
           <>
             <ProfileBackground className={styles.profileBackgroundSection} backgroundPhoto={profileData.backgroundPhoto}/>
             <div className={styles.pageContentSection}>
-              <ProfileCard className={styles.profileCardSection} profileData={profileData}/>
+              <ProfileCard
+                className={styles.profileCardSection}
+                profileData={profileData}
+              />
               <ProfileUserFeed className={styles.profileUserFeedSection} />
             </div>
           </>
-        )
-        }
-
+        )}
       </div>
     </DynamicModuleLoader>
   )

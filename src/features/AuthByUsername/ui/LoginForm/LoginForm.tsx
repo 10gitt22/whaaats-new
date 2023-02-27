@@ -29,7 +29,7 @@ const initialReducers: ReducersList = {
 }
 
 const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('forms')
   const { width } = useWindowDimensions()
 
   const dispatch = useAppDispatch()
@@ -37,9 +37,6 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
-
-  const usernameT = t('username')
-  const passwordT = t('password')
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -61,7 +58,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <form className={classNames(styles.LoginForm, {}, [className])} onSubmit={handleSubmit}>
         <div className={styles.formTitle}>
-          <h3>{t('logIn')}</h3>
+          <h3>{t('logIn', { ns: 'translation' })}</h3>
           {
             width > 768 ? <Logo className={styles.formLogo}/> : <LogoSmall className={styles.formLogo}/>
           }
@@ -76,16 +73,16 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
         <div>
           <Input
             className={styles.inputField}
-            label={usernameT}
-            id={usernameT}
+            label={t('username')}
+            id={'username'}
             value={username}
             onChange={onChangeUsername}
           />
           <Input
             className={styles.inputField}
             type='password'
-            label={passwordT}
-            id={passwordT}
+            label={t('password')}
+            id={'password'}
             value={password}
             onChange={onChangePassword}
           />
@@ -94,7 +91,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
           disabled={isLoading}
           onClick={onLoginClick}
         >
-          {t('signIn')}
+          {t('signIn', { ns: 'translation' })}
         </Button>
       </form>
     </DynamicModuleLoader>

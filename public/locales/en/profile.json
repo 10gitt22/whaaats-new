@@ -1,7 +1,12 @@
 {
-  "age": "Age",
-  "editBackground": "Edit Background",
-  "editProfile": "Edit Profile",
+  "editBackgroundPhoto": "Background Edit",
+  "editProfile": "Profile edit",
   "emptyFeed": "your feed empty",
-  "noPostsYet": "no posts yet"
+  "noPostsYet": "no posts yet",
+  "profileAvatarUpdated": "Avatar updated successfully",
+  "profileBackgroundUpdated": "Backround updated successfully",
+  "profileDataUpdated": "Profile updated succsessfully",
+  "toEditAvatar": "Edit Avatar",
+  "toEditBackground": "Edit Background",
+  "toEditProfile": "Edit Profile"
 }

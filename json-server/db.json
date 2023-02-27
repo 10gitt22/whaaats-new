@@ -1,9 +1,17 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
@@ -19,8 +27,8 @@
     "age": 21,
     "currency": "UAH",
     "country": "Ukraine",
-    "username": "gitt22" ,
-    "avatar": "https://www.ispca.ie/-/rehoming/midnight_1.jpg",
+    "username": "gitt22",
+    "avatar": "https://avatars.githubusercontent.com/u/46067435?s=400&u=7320d508b61430bed0ef63868ed28578b208c292&v=4",
     "backgroundPhoto": "https://wallpaper.dog/large/20501895.jpg"
   }
 }

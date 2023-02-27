@@ -35,7 +35,7 @@ export const DesktopMenu: FC<DesktopMenuProps> = memo(({ authData, className, op
             <UserMenu userName={authData.username} isMobile={false}/>
           </>
         )
-        : <Button variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>}
+        : <Button className={styles.loginButton} variant={ButtonVariants.PRIMARY} onClick={openAuthModal}>{t('signIn')}</Button>}
     </div>
   )
 })

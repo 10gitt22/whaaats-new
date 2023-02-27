@@ -1,0 +1,11 @@
+{
+  "age": "Age",
+  "country": "Country",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "password": "Password",
+  "photoUrl": "Photo URL",
+  "reset": "Reset form",
+  "save": "Save",
+  "username": "Username"
+}
