@@ -21,3 +21,13 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 export const Primary = Template.bind({})
 export const Dark = Template.bind({})
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Focused = Template.bind({})
+Focused.args = {
+  autoFocus: true
+}
+
+export const WithValue = Template.bind({})
+WithValue.args = {
+  value: 'gitt22'
+}
