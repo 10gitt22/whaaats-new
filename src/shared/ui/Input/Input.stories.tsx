@@ -31,3 +31,9 @@ export const WithValue = Template.bind({})
 WithValue.args = {
   value: 'gitt22'
 }
+
+export const Error = Template.bind({})
+Error.args = {
+  value: 'gitt22',
+  error: 'Validation error'
+}

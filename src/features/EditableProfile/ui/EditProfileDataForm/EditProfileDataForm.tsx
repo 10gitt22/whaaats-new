@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { AxiosError } from 'axios'
@@ -15,13 +15,13 @@ import { updateProfileData } from '../../api/updateProfileData'
 import { ProfileUpdateData } from '../../model/types/profileForm'
 import styles from '../FormStyles.module.scss'
 import { useToast } from 'app/providers/ToastProvider'
+import * as Yup from 'yup'
 
 export type EditProfileDataFormProps = {
   profileData: ProfileUpdateData
   className?: string
   close: () => void
 }
-
 const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileData, close }) => {
   const { t } = useTranslation('forms')
   const dispatch = useAppDispatch()
@@ -30,7 +30,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
 
   const { success } = useToast()
 
-  const { values, handleChange, handleSubmit, resetForm } = useFormik({
+  const { values, touched, errors, handleChange, handleSubmit, resetForm } = useFormik({
     initialValues: profileData,
     onSubmit: async (data) => {
       setLoading(true)
@@ -45,12 +45,31 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
       }
       setLoading(false)
     },
+    validationSchema: Yup.object().shape({
+      firstName: Yup.string().required(t('required'))
+      // eslint-disable-next-line no-useless-escape
+        .matches(/^[a-zA-Za-яА-Я\-]+$/, t('onlyLetters')),
+      lastName: Yup.string().required(t('required'))
+      // eslint-disable-next-line no-useless-escape
+        .matches(/^[a-zA-Za-яА-Я\-]+$/, t('onlyLetters')),
+      username: Yup.string().required(t('required'))
+        .matches(/^[a-zA-Z0-9]+$/, t('onlyLatin'))
+        .min(4, t('minLength4')),
+      age: Yup.number().required(t('required')).min(0, t('enterCorrectAge')).max(120, t('enterCorrectAge')),
+      country: Yup.string()
+        .required(t('required'))
+        .matches(/^[a-zA-Z]+$/, t('onlyLatin'))
+    }),
     enableReinitialize: true
   })
 
   const handleReset = useCallback(() => {
     resetForm()
   }, [])
+
+  useEffect(() => {
+    console.log(errors)
+  }, [errors.firstName])
 
   return (
     <div className={classNames(styles.EditProfileDataForm, {}, [className])}>
@@ -68,6 +87,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
           label={t('firstName')}
           id={'firstName'}
           name={'firstName'}
+          error={touched.firstName && errors.firstName ? errors.firstName : undefined}
           value={values.firstName}
           onChangeFormik={handleChange}
         />
@@ -76,6 +96,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
           label={t('lastName')}
           id={'lastName'}
           name={'lastName'}
+          error={touched.lastName && errors.lastName ? errors.lastName : undefined}
           value={values.lastName}
           onChangeFormik={handleChange}
         />
@@ -85,6 +106,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
           id={'username'}
           name={'username'}
           value={values.username}
+          error={touched.username && errors.username ? errors.username : undefined}
           onChangeFormik={handleChange}
         />
         <Input
@@ -94,6 +116,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
           id={'age'}
           name={'age'}
           value={values.age}
+          error={touched.age && errors.age ? errors.age : undefined}
           onChangeFormik={handleChange}
         />
         <Input
@@ -102,6 +125,7 @@ const EditProfileDataForm: FC<EditProfileDataFormProps> = ({ className, profileD
           id={'country'}
           name={'country'}
           value={values.country}
+          error={touched.country && errors.country ? errors.country : undefined}
           onChangeFormik={handleChange}
         />
         <div className={styles.buttonBlock}>

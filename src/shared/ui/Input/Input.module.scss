@@ -57,3 +57,26 @@
   border-color: var(--primary-color);
   outline: none;
 }
+
+.error {
+  .inputField{
+    color: var(--error-color);
+    border: solid 1px var(--error-color);
+  }
+  
+  .inputLabel {
+    top: 40%;
+    color: var(--error-color);
+  }
+
+  .inputField:focus + .inputLabel{
+    color: var(--error-color);
+  }
+}
+
+.inputError{
+  margin-top: 5px;
+  margin-left: 15px;
+  color: var(--error-color);
+  font-size: 12px;
+}

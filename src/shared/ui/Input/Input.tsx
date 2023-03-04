@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, InputHTMLAttributes, memo, useCallback, useMemo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import styles from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'type'>
@@ -11,6 +11,7 @@ interface InputProps extends HTMLInputProps {
   className?: string
   value?: string | number
   type?: 'text' | 'email' | 'number' | 'password' | 'number'
+  error?: string
   onChange?: (value: string) => void
   onChangeFormik?: (e: ChangeEvent<HTMLInputElement>) => void
 }
@@ -21,6 +22,7 @@ export const Input: FC<InputProps> = memo(({
   name,
   className,
   value,
+  error,
   onChange,
   onChangeFormik,
   type = 'text',
@@ -34,8 +36,12 @@ export const Input: FC<InputProps> = memo(({
     return onChange ? onChangeHandler : onChangeFormik
   }, [onChangeHandler, onChangeFormik])
 
+  const mods: Mods = {
+    [styles.error]: error || false
+  }
+
   return (
-    <div className={classNames(styles.Input, {}, [className])}>
+    <div className={classNames(styles.Input, mods, [className])}>
       <input
         id={id}
         type={type}
@@ -48,6 +54,7 @@ export const Input: FC<InputProps> = memo(({
         {...props}
       />
       <label className={styles.inputLabel}>{label}</label>
+      {error && (<div className={styles.inputError}>{error}</div>)}
     </div>
   )
 })

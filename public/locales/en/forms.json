@@ -1,10 +1,15 @@
 {
   "age": "Age",
   "country": "Country",
+  "enterCorrectAge": "Enter correct age (max - 120)",
   "firstName": "First Name",
   "lastName": "Last Name",
+  "minLength4": "Min length should be 4",
+  "onlyLatin": "Must contain only latin letters",
+  "onlyLetters": "Only letters. Digits, symbols, or whitespaces not allowed",
   "password": "Password",
   "photoUrl": "Photo URL",
+  "required": "Required field",
   "reset": "Reset form",
   "save": "Save",
   "username": "Username"
