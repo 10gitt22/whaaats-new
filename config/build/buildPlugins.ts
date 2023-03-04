@@ -8,7 +8,8 @@ export function buildPlugins ({
   paths,
   apiUrl,
   analyze,
-  isDev
+  isDev,
+  project
 }: BuildOptions): webpack.WebpackPluginInstance[] {
 
   const plugins =  [
@@ -22,7 +23,8 @@ export function buildPlugins ({
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-      __API__: JSON.stringify(apiUrl)
+      __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project)
     }),
   ].filter(Boolean)
 

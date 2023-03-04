@@ -14,6 +14,7 @@ export type BuildOptions = {
   port: number
   apiUrl: string
   analyze: boolean
+  project: 'storybook' | 'frontend' | 'jest'
 }
 
 export type BuildEnv = {
