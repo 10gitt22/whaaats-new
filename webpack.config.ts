@@ -32,9 +32,9 @@ export default (env: BuildEnv) => {
     src: path.resolve(__dirname, 'src')
   }
 
-  const localIP = getLocalIpAdress()  
-
   const mode = env.mode || 'development'
+  const localIP = mode === 'development' ? getLocalIpAdress() : 'localhost' 
+
   const PORT = env.port || 3000
   const apiUrl = env.apiUrl || `http://${localIP}:8000`
   const analyze = env.analyze || false
