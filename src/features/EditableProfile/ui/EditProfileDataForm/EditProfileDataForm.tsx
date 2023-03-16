@@ -2,6 +2,8 @@ import { FC, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { AxiosError } from 'axios'
+import * as Yup from 'yup'
+import { useToast } from 'app/providers/ToastProvider'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import Error from 'shared/assets/icons/error.svg'
@@ -11,11 +13,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
 import { profileActions } from 'entities/Profile'
 
-import { updateProfileData } from '../../api/updateProfileData'
+import { updateProfileData } from '../../api/updateProfileData/updateProfileData'
 import { ProfileUpdateData } from '../../model/types/profileForm'
 import styles from '../FormStyles.module.scss'
-import { useToast } from 'app/providers/ToastProvider'
-import * as Yup from 'yup'
 
 export type EditProfileDataFormProps = {
   profileData: ProfileUpdateData

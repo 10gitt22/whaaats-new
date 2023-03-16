@@ -1,4 +1,4 @@
-import { ProfileUpdateData } from '../model/types/profileForm'
+import { ProfileUpdateData } from '../../model/types/profileForm'
 import { $api } from 'shared/api/api'
 import { Profile } from 'entities/Profile'
 

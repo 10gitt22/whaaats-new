@@ -1,18 +1,19 @@
 import { FC, memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
+import { AxiosError } from 'axios'
+import { useToast } from 'app/providers/ToastProvider'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import Error from 'shared/assets/icons/error.svg'
 import { Input } from 'shared/ui/Input/Input'
 import { Button, ButtonVariants } from 'shared/ui/Button/Button'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+
+import { updateProfileBackground } from 'features/EditableProfile/api/updateProfileBackground/updateProfileBackground'
+import { profileActions } from 'entities/Profile'
 
 import styles from '../FormStyles.module.scss'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { updateProfileBackground } from 'features/EditableProfile/api/updateProfileBackground'
-import { profileActions } from 'entities/Profile'
-import { AxiosError } from 'axios'
-import { useToast } from 'app/providers/ToastProvider'
 
 export type EditBackgroundPhotoFormProps = {
   className?: string

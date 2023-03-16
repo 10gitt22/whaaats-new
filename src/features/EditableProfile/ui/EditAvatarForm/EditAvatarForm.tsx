@@ -2,6 +2,7 @@ import { FC, memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { AxiosError } from 'axios'
+import { useToast } from 'app/providers/ToastProvider'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import Error from 'shared/assets/icons/error.svg'
@@ -11,9 +12,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
 import { profileActions } from 'entities/Profile'
 
-import { updateProfileAvatar } from '../../api/updateProfileAvatar'
+import { updateProfileAvatar } from '../../api/updateProfileAvatar/updateProfileAvatar'
 import styles from '../FormStyles.module.scss'
-import { useToast } from 'app/providers/ToastProvider'
 
 export type EditAvatarFormProps = {
   className?: string
