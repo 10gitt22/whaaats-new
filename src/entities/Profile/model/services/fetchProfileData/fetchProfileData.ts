@@ -1,4 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { AxiosError } from 'axios'
+
 import { ThunkConfig } from 'app/providers/StoreProvider'
 import { Profile } from '../../types/profile'
 
@@ -13,8 +15,14 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
         throw new Error()
       }
       return response.data
-    } catch (error) {
-      return rejectWithValue('Error')
+    } catch (err) {
+      const error = err as AxiosError
+      if (error.response?.status === 401) {
+        setTimeout(() => {
+          location.href = '/'
+        }, 1000)
+      }
+      return rejectWithValue(error.response?.data.message)
     }
   }
 )

@@ -2,9 +2,23 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
 
+const en_errors = require('../public/locales/en/errors.json')
+const ua_errors = require('../public/locales/uk-UA/errors.json')
+
 const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
+
+function getTranslationFile(language) {
+    switch (language) {
+        case 'uk-UA':
+            return ua_errors
+        case 'en':
+            return en_errors
+        default:
+            return en_errors
+    } 
+}
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
@@ -40,10 +54,11 @@ server.post('/login', (req, res) => {
 });
 
 // CHECK USER AUTH
-// eslint-disable-next-line
 server.use((req, res, next) => {
+    const language = req.headers['accept-language']
     if (!req.headers.authorization) {
-        return res.status(403).json({ message: 'AUTH ERROR' });
+        const message = getTranslationFile(language)['401']
+        return res.status(401).json({ message });
     }
 
     next();

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import i18n from 'shared/config/i18n/i18n'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
 
 export const $api = axios.create({
@@ -14,6 +15,7 @@ $api.interceptors.request.use(
     if (token) {
       config.headers!.authorization = token
     }
+    config.headers!['accept-language'] = i18n.language
     return config
   },
   async (error) => await Promise.reject(error)
