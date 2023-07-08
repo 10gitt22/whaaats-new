@@ -25,7 +25,7 @@ const reducers: ReducersList = {
   profile: profileReducer
 }
 
-const Profile = memo(() => {
+const Profile = () => {
   const dispatch = useAppDispatch()
   const profileData = useSelector(getProfileData)
   const isLoading = useSelector(getProfileIsLoading)
@@ -63,6 +63,6 @@ const Profile = memo(() => {
       </div>
     </DynamicModuleLoader>
   )
-})
+}
 
-export default Profile
+export default memo(Profile)

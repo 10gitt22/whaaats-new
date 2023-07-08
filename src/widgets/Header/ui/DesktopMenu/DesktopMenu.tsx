@@ -26,6 +26,7 @@ export const DesktopMenu: FC<DesktopMenuProps> = memo(({ authData, className, op
       <div className={styles.nav}>
         <NavLink to={RoutePath.main}>{t('main')}</NavLink>
         <NavLink to={RoutePath.about}>{t('about')}</NavLink>
+        <NavLink to={RoutePath.articles}>{t('articles')}</NavLink>
       </div>
       <ThemeSwitcher />
       <LanguageSwitcher />

@@ -22,6 +22,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       <div className={classNames(styles.Sidebar, {}, [`app_theme_${theme}`, className])}>
         <NavLink to={RoutePath.main}>{t('main')}</NavLink>
         <NavLink to={RoutePath.about}>{t('about')}</NavLink>
+        <NavLink to={RoutePath.articles}>{t('articles')}</NavLink>
         <div className={styles.footer}>
           <LanguageSwitcher mobile={true}/>
           <ThemeSwitcher />

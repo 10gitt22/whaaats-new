@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const Main = memo(() => {
+const Main = () => {
   const { t } = useTranslation()
   return <div className="page">{t('main')}</div>
-})
+}
 
-export default Main
+export default memo(Main)
